@@ -1,0 +1,15 @@
+// The master.adoc file for The Integreatly Guide
+
+include::shared/attributes.adoc[]
+
+
+// Book Title
+= {steel-thread}
+
+include::introduction.adoc[leveloffset=1]
+
+include::setting-up-enmasse.adoc[leveloffset=1]
+
+include::running-node-app.adoc[leveloffset=1]
+
+include::creating-enmasse-binding.adoc[leveloffset=1]
