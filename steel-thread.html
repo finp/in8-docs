@@ -480,9 +480,6 @@ You use it to provide messaging services from a Node.js app to a Spring Boot app
 </ol>
 </div>
 </li>
-<li>
-<p>Log into <a href="https://console-enmasse.apps.pwright.openshiftworkshop.com/console/my-example-space">EnMasse</a>.</p>
-</li>
 </ol>
 </div>
 </div>
@@ -525,7 +522,7 @@ In this procedure, you deploy an example Node.js application that is pre-configu
 </div>
 </div>
 <div class="sect1">
-<h2 id="running-a-fruit-inventory-application_{context}">Creating EnMasse Binding</h2>
+<h2 id="creating-enmasse-binding_{context}">Creating EnMasse Binding</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To use EnMasse, you must create an OpenShift binding.</p>
@@ -542,7 +539,345 @@ In this procedure, you deploy an example Node.js application that is pre-configu
 <p>Click <strong>Next</strong> and enable all the options (consoleAccess, consoleAdmin, and externalAccess).</p>
 </li>
 <li>
-<p>Click <strong>Bind</strong>.</p>
+<p>Click <strong>Bind</strong> and wait for the binding to complete.</p>
+</li>
+<li>
+<p>Expand the <strong>EnMasse (standard)</strong> service by selecting the <strong>&gt;</strong> button.</p>
+</li>
+<li>
+<p>Select <strong>View Secret</strong> to navigate to the EnMasse credentials page.</p>
+</li>
+<li>
+<p>Select <strong>Reveal Secret</strong> to show the values for all the items.</p>
+</li>
+<li>
+<p>Note the values of the following fields for later use:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>messagingHost</strong></p>
+</li>
+<li>
+<p><strong>password</strong></p>
+</li>
+<li>
+<p><strong>username</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-addresses_{context}">Creating addresses in EnMasse space</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You create two addresses in EnMasse to route messages to the Spring Boot app.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log into <a href="https://console-enmasse.apps.pwright.openshiftworkshop.com/console/my-example-space">EnMasse</a> by selecting the <strong>OpenShift</strong> button on the log in screen and accepting the permissions request.</p>
+</li>
+<li>
+<p>Select the <strong>Addresses</strong> item from the left hand menu.</p>
+</li>
+<li>
+<p>Create a <strong>requests</strong> address:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select the <strong>Create</strong> button to start the <strong>Create new address</strong> wizard.</p>
+</li>
+<li>
+<p>Enter <code>work-queue/requests</code> as the address name.</p>
+</li>
+<li>
+<p>Select <strong>queue</strong> as the type and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Pooled Queue</strong> as the address plan and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Create</strong> to complete the wizard.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Create a <strong>updates</strong> address:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select the <strong>Create</strong> button to start the <strong>Create new address</strong> wizard.</p>
+</li>
+<li>
+<p>Enter <code>work-queue/worker-updates</code> as the address name.</p>
+</li>
+<li>
+<p>Select <strong>multicast</strong> as the type and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Standard</strong> as the address plan and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Create</strong> to complete the wizard.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-amqp-connection-in-fuse_{context}">Creating AMQP connection in Fuse Ignite</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To receive messages from EnMasse, you must create a connection in Fuse Ignite:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Fuse Ignite console</a>.</p>
+</li>
+<li>
+<p>Select <strong>Connections</strong> from the left hand menu.</p>
+</li>
+<li>
+<p>Select the <strong>Create Connection</strong> button to start the <strong>Create Connection</strong> wizard.</p>
+</li>
+<li>
+<p>Select <strong>AMQP</strong> to configure an AMQP Message Broker connection.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Do not select the similarly named <strong>AMQ</strong> option.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Enter the following, using the values from the EnMasse secret:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Connection URI: <code>amqp://&lt;messagingHost&gt;:5672?amqp.saslMechanisms=PLAIN</code></p>
+</li>
+<li>
+<p>User Name: <code>&lt;username&gt;</code></p>
+</li>
+<li>
+<p>Password: <code>&lt;password&gt;</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Set the value of <strong>Check Certificates</strong> to <code>Disable</code>.</p>
+</li>
+<li>
+<p>Select the <strong>Validate</strong> button to check that the values are valid.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong> and enter a name for the connection, for example, <code>enmasse</code>.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-http-connection-in-fuse_{context}">Creating HTTP connection in Fuse Ignite</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To send messages to the Spring Boot app, you must create a connection in Fuse Ignite:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Fuse Ignite console</a>.</p>
+</li>
+<li>
+<p>Select <strong>Connections</strong> from the left hand menu.</p>
+</li>
+<li>
+<p>Select the <strong>Create Connection</strong> button to start the <strong>Create Connection</strong> wizard.</p>
+</li>
+<li>
+<p>Select <strong>HTTP</strong> to configure an AMQP Message Broker connection.</p>
+</li>
+<li>
+<p>Enter the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Base URL: <code><a href="http://spring-boot-rest-http-crud-spring-app.apps.pwright.openshiftworkshop.com/" class="bare">http://spring-boot-rest-http-crud-spring-app.apps.pwright.openshiftworkshop.com/</a></code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select the <strong>Validate</strong> button to check that the values are valid.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong> and enter a name for the connection, for example, <code>http</code>.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-fuse-integration_{context}">Creating Integration in Fuse Ignite</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To use the Fuse connections, you must create an integration in Fuse Ignite:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Fuse Ignite console</a>.</p>
+</li>
+<li>
+<p>Select <strong>Integrations</strong> from the left hand menu.</p>
+</li>
+<li>
+<p>Select the <strong>Create Integration</strong> button to start the <strong>Create Integration</strong> wizard.</p>
+</li>
+<li>
+<p>Choose <strong>enmasse</strong> as the <strong>Start Connection</strong>.</p>
+</li>
+<li>
+<p>When prompted to <strong>Choose an Action</strong>, select <strong>Subscribe for messages</strong>.</p>
+</li>
+<li>
+<p>When prompted for a <strong>Destination Name</strong>, enter <code>work-queue/worker-updates</code>.</p>
+</li>
+<li>
+<p>Choose <strong>Queue</strong> as the <strong>Destination Type</strong> and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>When prompted to <strong>Specify Output Data Type</strong>:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select <strong>JSON Schema</strong> as the type.</p>
+</li>
+<li>
+<p>Enter the following in the <strong>Definition</strong> field:</p>
+<div class="listingblock">
+<div class="content">
+<pre>{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"type": {
+			"type": "string"
+		},
+		"stock": {
+			"type": "string"
+		}
+	}
+}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Click <strong>Done</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Choose <strong>http</strong> as the <strong>Finish Connection</strong>.</p>
+</li>
+<li>
+<p>When prompted to <strong>Choose an Action</strong>, select <strong>Invoke URL</strong>.</p>
+</li>
+<li>
+<p>When prompted for a <strong>properties</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter <code>api/fruits</code> as the <strong>URL Path</strong>.</p>
+</li>
+<li>
+<p>Select <strong>POST</strong> as the <strong>Http Method</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>When prompted to <strong>Specify Input Data Type</strong>:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select <strong>JSON Schema</strong> as the type.</p>
+</li>
+<li>
+<p>Enter the following in the <strong>Definition</strong> field:</p>
+<div class="listingblock">
+<div class="content">
+<pre>{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"stock": {
+			"type": "string"
+		}
+	}
+}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Click <strong>Done</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>When prompted to <strong>Add to Integration</strong>, select <strong>Add a Step</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Data Mapper</strong> to map source and target fields in the corresponding JSON schemas:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click and drag <strong>stock</strong> from the <strong>Source</strong> column to <strong>stock</strong> in the <strong>Target</strong> column.</p>
+</li>
+<li>
+<p>Click and drag <strong>type</strong> from the <strong>Source</strong> column to <strong>name</strong> in the <strong>Target</strong> column.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Click <strong>Done</strong> to navigate back to the Integration screen.</p>
+</li>
+<li>
+<p>Click <strong>Publish</strong>.</p>
+</li>
+<li>
+<p>When prompted, enter a name, for example <code>steel-thread-0</code>.</p>
 </li>
 </ol>
 </div>
@@ -551,7 +886,7 @@ In this procedure, you deploy an example Node.js application that is pre-configu
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-27 14:44:55 IST
+Last updated 2018-08-28 12:17:58 IST
 </div>
 </div>
 </body>
