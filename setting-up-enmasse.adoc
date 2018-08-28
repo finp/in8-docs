@@ -11,7 +11,9 @@
 [id='setting-up-enmasse_{context}']
 // The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
 
-:enmasse-url: https://console-enmasse.apps.pwright.openshiftworkshop.com/console/my-example-space
+// TODO: figure out enmasse url
+// :enmasse-url: https://console-enmasse.apps.pwright.openshiftworkshop.com/console/my-example-space
+// or https://console-enmasse-my-example-space.apps.pwright.openshiftworkshop.com/#/dashboard
 
 = Creating an EnMasse space
 
@@ -26,4 +28,4 @@ You use it to provide messaging services from a Node.js app to a Spring Boot app
 
 .. Choose *Do not bind at this time*.
 
-. Log into link:{enmasse-url}[EnMasse].
+// . Log into link:{enmasse-url}[EnMasse].
