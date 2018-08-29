@@ -4,10 +4,13 @@
 
 
 [id='creating-amqp-connection-in-fuse_{context}']
+// tag::intro[]
+
 = Creating AMQP connection in Fuse Ignite
 
 To receive messages from EnMasse, you must create a connection in Fuse Ignite:
 
+// end::intro[]
 :fuse-url: https://eval.apps.pwright.openshiftworkshop.com/
 
 . Log in to the link:{fuse-url}[Fuse Ignite console].

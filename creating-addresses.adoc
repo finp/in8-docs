@@ -15,9 +15,13 @@
 :enmasse-url: https://console-enmasse.apps.pwright.openshiftworkshop.com/console/my-example-space
 // https://console-enmasse-my-example-space.apps.pwright.openshiftworkshop.com/#/dashboard
 
+// tag::intro[]
+
 = Creating addresses in EnMasse space
 
 You create two addresses in EnMasse to route messages to the Spring Boot app.
+
+// end::intro[]
 
 . Log into link:{enmasse-url}[EnMasse] by selecting the *OpenShift* button on the log in screen and accepting the permissions request.
 . Select the *Addresses* item from the left hand menu.

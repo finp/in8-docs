@@ -4,9 +4,12 @@
 
 
 [id='creating-fuse-integration_{context}']
+// tag::intro[]
 = Creating Integration in Fuse Ignite
 
 To use the Fuse connections, you must create an integration in Fuse Ignite:
+
+// end::intro[]
 
 :fuse-url: https://eval.apps.pwright.openshiftworkshop.com/
 

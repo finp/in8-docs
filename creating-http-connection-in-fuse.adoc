@@ -4,9 +4,12 @@
 
 
 [id='creating-http-connection-in-fuse_{context}']
+// tag::intro[]
 = Creating HTTP connection in Fuse Ignite
 
 To send messages to the Spring Boot app, you must create a connection in Fuse Ignite:
+
+// end::intro[]
 
 :fuse-url: https://eval.apps.pwright.openshiftworkshop.com/
 :spring-boot-url: http://spring-boot-rest-http-crud-spring-app.apps.pwright.openshiftworkshop.com/

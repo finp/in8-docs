@@ -4,9 +4,13 @@
 
 
 [id='creating-enmasse-binding_{context}']
+
+// tag::intro[]
 = Creating EnMasse Binding
 
 To use EnMasse, you must create an OpenShift binding.
+
+// end::intro[]
 
 :openshift-url: https://master.pwright.openshiftworkshop.com/console/project/eval/overview
 
