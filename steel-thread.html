@@ -485,43 +485,6 @@ You use it to provide messaging services from a Node.js app to a Spring Boot app
 </div>
 </div>
 <div class="sect1">
-<h2 id="running-a-fruit-inventory-application_{context}">Running a Node.js messaging app</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The Red Hat Developer Launcher enables you to build and deploy applications on OpenShift.
-In this procedure, you deploy an example Node.js application that is pre-configured to provide a REST API that returns a list of fruit.</p>
-</div>
-<div class="paragraph">
-<p>:launcher-url:http://launcher-launcher.apps.pwright.openshiftworkshop.com/</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Log in to the <a href="{launcher-url}">Red Hat Developer Launcher</a>.</p>
-</li>
-<li>
-<p>Select the <strong>LAUNCH YOUR PROJECT</strong>.</p>
-</li>
-<li>
-<p>Enter a name for your application, for example <code>my-node-app</code> and select <strong>Continue</strong>.</p>
-</li>
-<li>
-<p>Select <strong>Code Locally, Build and Deploy</strong> to deploy the application on a hosted OpenShift instance. Click the blue down arrow to continue.</p>
-</li>
-<li>
-<p>Select <strong>Messaging Work Queue</strong> from the list of missions and <strong>Node.js</strong> from the list of runtimes. Choose the <strong>Integreatly</strong> version of Node.js. Click the blue down arrow to continue.</p>
-</li>
-<li>
-<p>Select the <strong>Log in &amp; Authorize Account</strong> button and give OpenShift permissions to your GitHub account. Click the blue down arrow to continue.</p>
-</li>
-<li>
-<p>Review your configuration and select <strong>Set Up Application</strong> to create an OpenShift deployment.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="creating-enmasse-binding_{context}">Creating EnMasse Binding</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -633,15 +596,108 @@ In this procedure, you deploy an example Node.js application that is pre-configu
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating-amqp-connection-in-fuse_{context}">Creating AMQP connection in Fuse Ignite</h2>
+<h2 id="running-node-app_{context}">Running a Node.js messaging app</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To receive messages from EnMasse, you must create a connection in Fuse Ignite:</p>
+<p>The Red Hat Developer Launcher enables you to build and deploy applications on OpenShift.
+In this procedure, you deploy an example Node.js application that is pre-configured to provide a REST API that returns a list of fruit.</p>
+</div>
+<div class="paragraph">
+<p>:launcher-url:http://launcher-launcher.apps.pwright.openshiftworkshop.com/</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Fuse Ignite console</a>.</p>
+<p>Log in to the <a href="{launcher-url}">Red Hat Developer Launcher</a>.</p>
+</li>
+<li>
+<p>Select the <strong>LAUNCH YOUR PROJECT</strong>.</p>
+</li>
+<li>
+<p>Enter a name for your application, for example <code>my-node-app</code> and select <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Code Locally, Build and Deploy</strong> to deploy the application on a hosted OpenShift instance. Click the blue down arrow to continue.</p>
+</li>
+<li>
+<p>Select <strong>Messaging Work Queue</strong> from the list of missions and <strong>Node.js</strong> from the list of runtimes.</p>
+<div class="paragraph">
+<p>Choose the <strong>Integreatly</strong> version of Node.js. Click the blue down arrow to continue.</p>
+</div>
+</li>
+<li>
+<p>Select the <strong>Log in &amp; Authorize Account</strong> button and give OpenShift permissions to your GitHub account. Click the blue down arrow to continue.</p>
+</li>
+<li>
+<p>Review your configuration and select <strong>Set Up Application</strong> to create an OpenShift deployment.</p>
+</li>
+<li>
+<p>Edit the messaging-service configmap, setting the values for <code>MESSAGING_SERVICE_PASSWORD</code> and <code>MESSAGING_SERVICE_USER</code> to the values from the EnMasse binding secret:</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc edit cm messaging-service -n eval</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart the application:</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc rollout latest nodejs-messaging-work-queue-frontend -n eval</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="running-spring-app_{context}">Running a Node.js messaging app</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Red Hat Developer Launcher enables you to build and deploy applications on OpenShift.
+In this procedure, you deploy an example Node.js application that is pre-configured to provide a REST API that returns a list of fruit.</p>
+</div>
+<div class="paragraph">
+<p>:launcher-url:http://launcher-launcher.apps.pwright.openshiftworkshop.com/</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the <a href="{launcher-url}">Red Hat Developer Launcher</a>.</p>
+</li>
+<li>
+<p>Select the <strong>LAUNCH YOUR PROJECT</strong>.</p>
+</li>
+<li>
+<p>Enter a name for your application, for example, <code>my-spring-app</code> and select <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Code Locally, Build and Deploy</strong> to deploy the application on a hosted OpenShift instance. Click the blue down arrow to continue.</p>
+</li>
+<li>
+<p>Select <strong>CRUD</strong> from the list of missions and <strong>Spring Boot</strong> from the list of runtimes. Accept the default version of Spring Boot. Click the blue down arrow to continue.</p>
+</li>
+<li>
+<p>Select the <strong>Log in &amp; Authorize Account</strong> button and give OpenShift permissions to your GitHub account. Click the blue down arrow to continue.</p>
+</li>
+<li>
+<p>Review your configuration and select <strong>Set Up Application</strong> to create an OpenShift deployment.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-amqp-connection-in-fuse_{context}">Creating AMQP connection in Fuse Ignite</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To receive messages from EnMasse, you must create a connection in Red Hat Fuse Online:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
 </li>
 <li>
 <p>Select <strong>Connections</strong> from the left hand menu.</p>
@@ -697,15 +753,15 @@ Do not select the similarly named <strong>AMQ</strong> option.
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating-http-connection-in-fuse_{context}">Creating HTTP connection in Fuse Ignite</h2>
+<h2 id="creating-http-connection-in-fuse_{context}">Creating HTTP connection in Red Hat Fuse Online</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To send messages to the Spring Boot app, you must create a connection in Fuse Ignite:</p>
+<p>To send messages to the Spring Boot app, you must create a connection in Red Hat Fuse Online:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Fuse Ignite console</a>.</p>
+<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
 </li>
 <li>
 <p>Select <strong>Connections</strong> from the left hand menu.</p>
@@ -740,15 +796,15 @@ Do not select the similarly named <strong>AMQ</strong> option.
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating-fuse-integration_{context}">Creating Integration in Fuse Ignite</h2>
+<h2 id="creating-fuse-integration_{context}">Creating Integration in Red Hat Fuse Online</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To use the Fuse connections, you must create an integration in Fuse Ignite:</p>
+<p>To use the Fuse connections, you must create an integration in Red Hat Fuse Online:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Fuse Ignite console</a>.</p>
+<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
 </li>
 <li>
 <p>Select <strong>Integrations</strong> from the left hand menu.</p>
@@ -883,10 +939,59 @@ Do not select the similarly named <strong>AMQ</strong> option.
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="using-integration_{context}">Using the application integration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After setting up the integration between the Node.js and Spring Boot applications, we can use the integration to create a new fruit for the grocery inventory application.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the <a href="http://frontend-node-app.apps.pwright.openshiftworkshop.com/">Node.js app</a>.</p>
+</li>
+<li>
+<p>Enter values for <strong>Fruit</strong> and <strong>Stock</strong>, for example, <code>Banana</code> and <code>100</code>.</p>
+</li>
+<li>
+<p>Click <strong>Send Request</strong>.</p>
+</li>
+<li>
+<p>Navigate to the <a href="http://spring-boot-rest-http-crud-spring-app.apps.pwright.openshiftworkshop.com/">Spring Boot app</a>.</p>
+</li>
+<li>
+<p>Check that the entry from the Node.js app is displayed.</p>
+</li>
+<li>
+<p>To view the log of activity:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
+</li>
+<li>
+<p>Select <strong>Integrations</strong> from the left hand menu.</p>
+</li>
+<li>
+<p>Select your integration.</p>
+</li>
+<li>
+<p>Select the <strong>Activity</strong> tab.</p>
+</li>
+<li>
+<p>Expand the log entry to display the steps performed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-28 12:17:58 IST
+Last updated 2018-08-30 13:48:08 IST
 </div>
 </div>
 </body>
