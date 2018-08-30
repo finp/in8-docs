@@ -600,7 +600,7 @@ You use it to provide messaging services from a Node.js app to a Spring Boot app
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Red Hat Developer Launcher enables you to build and deploy applications on OpenShift.
-In this procedure, you deploy an example Node.js application that is pre-configured to provide a REST API that returns a list of fruit.</p>
+In this procedure, you deploy an example Node.js application that is pre-configured to allow you enter details of fruit stock.</p>
 </div>
 <div class="paragraph">
 <p>:launcher-url:http://launcher-launcher.apps.pwright.openshiftworkshop.com/</p>
@@ -652,11 +652,114 @@ In this procedure, you deploy an example Node.js application that is pre-configu
 </div>
 </div>
 <div class="sect1">
-<h2 id="running-spring-app_{context}">Running a Node.js messaging app</h2>
+<h2 id="editing-node-app-with-che_{context}">Editing the Node.js messaging app</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Red Hat Developer Launcher enables you to build and deploy applications on OpenShift.
-In this procedure, you deploy an example Node.js application that is pre-configured to provide a REST API that returns a list of fruit.</p>
+<p>Che allows you edit the source code for your Node.js app in the browser.</p>
+</div>
+<div class="paragraph">
+<p>:che-url:http://che-che.apps.pwright.openshiftworkshop.com/</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to <a href="{launcher-url}">Che</a>.</p>
+</li>
+<li>
+<p>Click <strong>Create Workspace</strong>.</p>
+</li>
+<li>
+<p>Enter a name for the workspace, for example <code>node-app</code>.</p>
+</li>
+<li>
+<p>Choose <strong>Node</strong> as the stack.</p>
+</li>
+<li>
+<p>Select your Node.js app:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click <strong>Add or Import Project</strong> to display a set of import options.</p>
+</li>
+<li>
+<p>Click the <strong>GitHub</strong> tab.</p>
+</li>
+<li>
+<p>Select the Node.js app you created using Launcher.</p>
+</li>
+<li>
+<p>Click <strong>Add</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>. A pop-up is displayed informing you that your workspace was successfully created.</p>
+</li>
+<li>
+<p>Click <strong>Open in IDE</strong>. The Eclipse Che IDE is displayed.</p>
+</li>
+<li>
+<p>Edit the app, for example to prepend some text to the messages sent from this app:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Open the <code>frontend/app.js</code> file.</p>
+</li>
+<li>
+<p>Edit the <code>app.post</code> code to:</p>
+<div class="listingblock">
+<div class="content">
+<pre>app.post("/api/send-request", (req, resp) =&gt; {
+    let message = {
+        // ...
+        body: JSON.stringify({type: 'Dr. Evals ' + req.body.text, stock: req.body.stock})
+    };
+
+    // ...
+});</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Save the changed file.</p>
+</li>
+<li>
+<p>Select <strong>Preferences</strong> from the <strong>Profile</strong> menu.</p>
+</li>
+<li>
+<p>From the Git option, specify a name and valid Git email address.</p>
+</li>
+<li>
+<p>Click the <strong>Save</strong> button and <strong>Close</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Commit</strong> from the <strong>Git</strong> menu.</p>
+</li>
+<li>
+<p>Enter a commit message to document your changes, for example, <code>Prepend body type</code>.</p>
+</li>
+<li>
+<p>Select the <strong>Push commited changes to</strong> option and ensure it is indicating that the push is to the <code>origin/master</code> branch.</p>
+</li>
+<li>
+<p>Click <strong>Commit</strong>.</p>
+<div class="paragraph">
+<p>This automatically triggers a new build of the app in OpenShift.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="running-spring-app_{context}">Running a Spring Boot CRUD app</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this procedure, you deploy an example Spring Boot CRUD application that is pre-configured to act as a simple grocery inventory application.</p>
 </div>
 <div class="paragraph">
 <p>:launcher-url:http://launcher-launcher.apps.pwright.openshiftworkshop.com/</p>
@@ -689,10 +792,10 @@ In this procedure, you deploy an example Node.js application that is pre-configu
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating-amqp-connection-in-fuse_{context}">Creating AMQP connection in Fuse Ignite</h2>
+<h2 id="creating-amqp-connection-in-fuse_{context}">Creating AMQP connection in Red Hat Fuse Online</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To receive messages from EnMasse, you must create a connection in Red Hat Fuse Online:</p>
+<p>To receive messages from EnMasse, you must create a connection in Red Hat Fuse Online.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -756,7 +859,7 @@ Do not select the similarly named <strong>AMQ</strong> option.
 <h2 id="creating-http-connection-in-fuse_{context}">Creating HTTP connection in Red Hat Fuse Online</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To send messages to the Spring Boot app, you must create a connection in Red Hat Fuse Online:</p>
+<p>To send messages to the Spring Boot app, you must create a connection in Red Hat Fuse Online.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -799,7 +902,7 @@ Do not select the similarly named <strong>AMQ</strong> option.
 <h2 id="creating-fuse-integration_{context}">Creating Integration in Red Hat Fuse Online</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To use the Fuse connections, you must create an integration in Red Hat Fuse Online:</p>
+<p>To use the Fuse connections, you must create an integration in Red Hat Fuse Online.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -991,7 +1094,7 @@ Do not select the similarly named <strong>AMQ</strong> option.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-30 13:48:08 IST
+Last updated 2018-08-30 15:07:08 IST
 </div>
 </div>
 </body>

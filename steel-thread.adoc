@@ -16,6 +16,8 @@ include::creating-addresses.adoc[leveloffset=1]
 
 include::running-node-app.adoc[leveloffset=1]
 
+include::editing-node-app-with-che.adoc[leveloffset=1]
+
 include::running-spring-app.adoc[leveloffset=1]
 
 include::creating-amqp-connection-in-fuse.adoc[leveloffset=1]
