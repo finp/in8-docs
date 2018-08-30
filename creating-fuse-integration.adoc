@@ -7,7 +7,7 @@
 // tag::intro[]
 = Creating Integration in Red Hat Fuse Online
 
-To use the Fuse connections, you must create an integration in Red Hat Fuse Online:
+To use the Fuse connections, you must create an integration in Red Hat Fuse Online.
 
 // end::intro[]
 
