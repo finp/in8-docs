@@ -3,7 +3,13 @@
 
 include::shared/attributes.adoc[]
 
+
+:numbered:
+:chapter-label:
+
 = Splash
+
+
 
 include::setting-up-enmasse.adoc[leveloffset=2,tags=intro]
 
