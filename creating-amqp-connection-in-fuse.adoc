@@ -8,12 +8,12 @@
 
 = Creating AMQP connection in Fuse Ignite
 
-To receive messages from EnMasse, you must create a connection in Fuse Ignite:
+To receive messages from EnMasse, you must create a connection in Red Hat Fuse Online:
 
 // end::intro[]
 :fuse-url: https://eval.apps.pwright.openshiftworkshop.com/
 
-. Log in to the link:{fuse-url}[Fuse Ignite console].
+. Log in to the link:{fuse-url}[Red Hat Fuse Online console].
 
 . Select *Connections* from the left hand menu.
 
