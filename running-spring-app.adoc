@@ -25,3 +25,5 @@ In this procedure, you deploy an example Spring Boot CRUD application that is pr
 . Select the *Log in & Authorize Account* button and give OpenShift permissions to your GitHub account. Click the blue down arrow to continue.
 
 . Review your configuration and select *Set Up Application* to create an OpenShift deployment.
++
+NOTE: Creating this application automatically creates an OpenShift project of the same name.
