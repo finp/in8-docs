@@ -11,7 +11,7 @@ Che allows you edit the source code for your Node.js app in the browser.
 
 // end::intro[]
 
-:che-url:http://che-che.apps.pwright.openshiftworkshop.com/
+:che-url: http://che-che.apps.city.openshiftworkshop.com/
 
 . Log in to link:{launcher-url}[Che].
 

@@ -11,7 +11,7 @@ To use the Fuse connections, you must create an integration in Red Hat Fuse Onli
 
 // end::intro[]
 
-:fuse-url: https://eval.apps.pwright.openshiftworkshop.com/
+:fuse-url: https://eval.apps.city.openshiftworkshop.com/
 
 . Log in to the link:{fuse-url}[Red Hat Fuse Online console].
 

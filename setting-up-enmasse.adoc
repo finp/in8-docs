@@ -11,9 +11,9 @@
 [id='setting-up-enmasse_{context}']
 // The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
 
-// TODO: figure out enmasse url
-// :enmasse-url: https://console-enmasse.apps.pwright.openshiftworkshop.com/console/my-example-space
-// or https://console-enmasse-my-example-space.apps.pwright.openshiftworkshop.com/#/dashboard
+
+// :enmasse-url: https://console-enmasse.apps.city.openshiftworkshop.com/console/my-example-space
+// or https://console-enmasse-my-example-space.apps.city.openshiftworkshop.com/#/dashboard
 
 // tag::intro[]
 = Creating an EnMasse space
@@ -23,12 +23,16 @@ You use it to provide messaging services from a Node.js app to a Spring Boot app
 
 // end::intro[]
 
-. Provison an EnMasse service by selecting *EnMasse (standard)* from the service catalog.
+Provison an EnMasse service by selecting *EnMasse (standard)* from the service catalog.
 
-.. Select the *unlimited-standard* option in the Plan step of the wizard.
+:openshift-url: https://master.city.openshiftworkshop.com/console/project/eval/overview
 
-.. Enter `my-example-space` as the configuration name.
+. Log in to the link:{openshift-url}[OpenShift console].
 
-.. Choose *Do not bind at this time*.
+. Select the *unlimited-standard* option in the Plan step of the wizard.
+
+. Enter `my-example-space` as the address space to create.
+
+. Choose *Do not bind at this time*.
 
 // . Log into link:{enmasse-url}[EnMasse].

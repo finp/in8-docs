@@ -12,7 +12,7 @@ To use EnMasse, you must create an OpenShift binding.
 
 // end::intro[]
 
-:openshift-url: https://master.pwright.openshiftworkshop.com/console/project/eval/overview
+:openshift-url: https://master.city.openshiftworkshop.com/console/project/eval/overview
 
 . Log in to the link:{openshift-url}[OpenShift console].
 
@@ -22,17 +22,3 @@ To use EnMasse, you must create an OpenShift binding.
 
 . Click *Bind* and wait for the binding to complete.
 
-. Expand the *EnMasse (standard)* service by selecting the *>* button.
-
-. Select *View Secret* to navigate to the EnMasse credentials page.
-
-. Select *Reveal Secret* to show the values for all the items.
-
-. Note the values of the following fields for later use:
-+
-* *messagingHost*
-//messaging.enmasse-my-example-spac.svc
-* *password*
-//8qP17U9qQ749PNsQOkLyVGP9BQrBmVOT+9MvfrpnH18=
-* *username*
-//user-d5515e3e-121c-4e11-acdb-321ba2c4c499

@@ -462,23 +462,22 @@ This integration can be provisioned in minutes and is easily monitored and maint
 <p>EnMasse simplifies running messaging infrastructure for your organization.
 You use it to provide messaging services from a Node.js app to a Spring Boot app.</p>
 </div>
+<div class="paragraph">
+<p>Provison an EnMasse service by selecting <strong>EnMasse (standard)</strong> from the service catalog.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Provison an EnMasse service by selecting <strong>EnMasse (standard)</strong> from the service catalog.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<p>Log in to the <a href="https://master.city.openshiftworkshop.com/console/project/eval/overview">OpenShift console</a>.</p>
+</li>
 <li>
 <p>Select the <strong>unlimited-standard</strong> option in the Plan step of the wizard.</p>
 </li>
 <li>
-<p>Enter <code>my-example-space</code> as the configuration name.</p>
+<p>Enter <code>my-example-space</code> as the address space to create.</p>
 </li>
 <li>
 <p>Choose <strong>Do not bind at this time</strong>.</p>
-</li>
-</ol>
-</div>
 </li>
 </ol>
 </div>
@@ -493,7 +492,7 @@ You use it to provide messaging services from a Node.js app to a Spring Boot app
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to the <a href="https://master.pwright.openshiftworkshop.com/console/project/eval/overview">OpenShift console</a>.</p>
+<p>Log in to the <a href="https://master.city.openshiftworkshop.com/console/project/eval/overview">OpenShift console</a>.</p>
 </li>
 <li>
 <p>Click the <strong>Create Binding</strong> option beside <strong>EnMasse (standard)</strong>.</p>
@@ -503,31 +502,6 @@ You use it to provide messaging services from a Node.js app to a Spring Boot app
 </li>
 <li>
 <p>Click <strong>Bind</strong> and wait for the binding to complete.</p>
-</li>
-<li>
-<p>Expand the <strong>EnMasse (standard)</strong> service by selecting the <strong>&gt;</strong> button.</p>
-</li>
-<li>
-<p>Select <strong>View Secret</strong> to navigate to the EnMasse credentials page.</p>
-</li>
-<li>
-<p>Select <strong>Reveal Secret</strong> to show the values for all the items.</p>
-</li>
-<li>
-<p>Note the values of the following fields for later use:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>messagingHost</strong></p>
-</li>
-<li>
-<p><strong>password</strong></p>
-</li>
-<li>
-<p><strong>username</strong></p>
-</li>
-</ul>
-</div>
 </li>
 </ol>
 </div>
@@ -542,7 +516,7 @@ You use it to provide messaging services from a Node.js app to a Spring Boot app
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log into <a href="https://console-enmasse.apps.pwright.openshiftworkshop.com/console/my-example-space">EnMasse</a> by selecting the <strong>OpenShift</strong> button on the log in screen and accepting the permissions request.</p>
+<p>Log into <a href="https://console-enmasse.apps.city.openshiftworkshop.com/console/my-example-space">EnMasse</a> by selecting the <strong>OpenShift</strong> button on the log in screen and accepting the permissions request.</p>
 </li>
 <li>
 <p>Select the <strong>Addresses</strong> item from the left hand menu.</p>
@@ -602,13 +576,10 @@ You use it to provide messaging services from a Node.js app to a Spring Boot app
 <p>The Red Hat Developer Launcher enables you to build and deploy applications on OpenShift.
 In this procedure, you deploy an example Node.js application that is pre-configured to allow you enter details of fruit stock.</p>
 </div>
-<div class="paragraph">
-<p>:launcher-url:http://launcher-launcher.apps.pwright.openshiftworkshop.com/</p>
-</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to the <a href="{launcher-url}">Red Hat Developer Launcher</a>.</p>
+<p>Log in to the <a href="http://launcher-launcher.apps.city.openshiftworkshop.com/">Red Hat Developer Launcher</a>.</p>
 </li>
 <li>
 <p>Select the <strong>LAUNCH YOUR PROJECT</strong>.</p>
@@ -630,21 +601,98 @@ In this procedure, you deploy an example Node.js application that is pre-configu
 </li>
 <li>
 <p>Review your configuration and select <strong>Set Up Application</strong> to create an OpenShift deployment.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Creating this application automatically creates an OpenShift project of the same name.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Edit the messaging-service configmap, setting the values for <code>MESSAGING_SERVICE_PASSWORD</code> and <code>MESSAGING_SERVICE_USER</code> to the values from the EnMasse binding secret:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Log in to the <a href="https://master.city.openshiftworkshop.com/console/project/eval/overview">OpenShift console</a> and navigate to the Overview screen for the <strong>evals</strong> project.</p>
+</li>
+<li>
+<p>Expand the <strong>EnMasse (standard)</strong> service by selecting the <strong>&gt;</strong> button.</p>
+</li>
+<li>
+<p>Select <strong>View Secret</strong> to navigate to the EnMasse credentials page.</p>
+</li>
+<li>
+<p>Select <strong>Reveal Secret</strong> to show the values for all the items.</p>
+</li>
+<li>
+<p>Note the values of the following fields:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>password</strong></p>
+</li>
+<li>
+<p><strong>username</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>To edit the configmap using the console:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Change to the OpenShift project associated with the Node.js app, for example, <code>node-app</code>.</p>
+</li>
+<li>
+<p>Select <strong>Config Maps</strong> from the <strong>Resources</strong> menu.</p>
+</li>
+<li>
+<p>Select the <strong>messaging-service</strong> configmap.</p>
+</li>
+<li>
+<p>Set the values for <code>MESSAGING_SERVICE_PASSWORD</code> and <code>MESSAGING_SERVICE_USER</code> to the values retrieved from the previous step.</p>
+</li>
+<li>
+<p>Navigate to the <strong>Overview</strong> screen and choose <strong>Deploy</strong> from the menu for the application.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To edit the configmap using <code>oc</code> command line tool:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>oc edit cm messaging-service -n eval</pre>
 </div>
 </div>
-</li>
-<li>
-<p>Restart the application:</p>
+<div class="paragraph">
+<p>To restart the application:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>oc rollout latest nodejs-messaging-work-queue-frontend -n eval</pre>
 </div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </li>
 </ol>
@@ -657,13 +705,10 @@ In this procedure, you deploy an example Node.js application that is pre-configu
 <div class="paragraph">
 <p>Che allows you edit the source code for your Node.js app in the browser.</p>
 </div>
-<div class="paragraph">
-<p>:che-url:http://che-che.apps.pwright.openshiftworkshop.com/</p>
-</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to <a href="{launcher-url}">Che</a>.</p>
+<p>Log in to <a href="http://launcher-launcher.apps.city.openshiftworkshop.com/">Che</a>.</p>
 </li>
 <li>
 <p>Click <strong>Create Workspace</strong>.</p>
@@ -761,13 +806,10 @@ In this procedure, you deploy an example Node.js application that is pre-configu
 <div class="paragraph">
 <p>In this procedure, you deploy an example Spring Boot CRUD application that is pre-configured to act as a simple grocery inventory application.</p>
 </div>
-<div class="paragraph">
-<p>:launcher-url:http://launcher-launcher.apps.pwright.openshiftworkshop.com/</p>
-</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to the <a href="{launcher-url}">Red Hat Developer Launcher</a>.</p>
+<p>Log in to the <a href="http://launcher-launcher.apps.city.openshiftworkshop.com/">Red Hat Developer Launcher</a>.</p>
 </li>
 <li>
 <p>Select the <strong>LAUNCH YOUR PROJECT</strong>.</p>
@@ -786,6 +828,18 @@ In this procedure, you deploy an example Node.js application that is pre-configu
 </li>
 <li>
 <p>Review your configuration and select <strong>Set Up Application</strong> to create an OpenShift deployment.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Creating this application automatically creates an OpenShift project of the same name.
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ol>
 </div>
@@ -800,7 +854,7 @@ In this procedure, you deploy an example Node.js application that is pre-configu
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
+<p>Log in to the <a href="https://eval.apps.city.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
 </li>
 <li>
 <p>Select <strong>Connections</strong> from the left hand menu.</p>
@@ -824,7 +878,42 @@ Do not select the similarly named <strong>AMQ</strong> option.
 </div>
 </li>
 <li>
-<p>Enter the following, using the values from the EnMasse secret:</p>
+<p>Retrieve configuration values relating to EnMasse:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Log in to the <a href="https://master.city.openshiftworkshop.com/console/project/eval/overview">OpenShift console</a> and navigate to the Overview screen for the <strong>evals</strong> project.</p>
+</li>
+<li>
+<p>Expand the <strong>EnMasse (standard)</strong> service by selecting the <strong>&gt;</strong> button.</p>
+</li>
+<li>
+<p>Select <strong>View Secret</strong> to navigate to the EnMasse credentials page.</p>
+</li>
+<li>
+<p>Select <strong>Reveal Secret</strong> to show the values for all the items.</p>
+</li>
+<li>
+<p>Note the values of the following fields for later use:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>messagingHost</strong></p>
+</li>
+<li>
+<p><strong>password</strong></p>
+</li>
+<li>
+<p><strong>username</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Enter the following, using the configuration values relating to EnMasse:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -864,7 +953,7 @@ Do not select the similarly named <strong>AMQ</strong> option.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
+<p>Log in to the <a href="https://eval.apps.city.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
 </li>
 <li>
 <p>Select <strong>Connections</strong> from the left hand menu.</p>
@@ -880,7 +969,7 @@ Do not select the similarly named <strong>AMQ</strong> option.
 <div class="ulist">
 <ul>
 <li>
-<p>Base URL: <code><a href="http://spring-boot-rest-http-crud-spring-app.apps.pwright.openshiftworkshop.com/" class="bare">http://spring-boot-rest-http-crud-spring-app.apps.pwright.openshiftworkshop.com/</a></code></p>
+<p>Base URL: <code><a href="http://spring-boot-rest-http-crud-spring-app.apps.city.openshiftworkshop.com/" class="bare">http://spring-boot-rest-http-crud-spring-app.apps.city.openshiftworkshop.com/</a></code></p>
 </li>
 </ul>
 </div>
@@ -907,7 +996,7 @@ Do not select the similarly named <strong>AMQ</strong> option.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
+<p>Log in to the <a href="https://eval.apps.city.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
 </li>
 <li>
 <p>Select <strong>Integrations</strong> from the left hand menu.</p>
@@ -1051,7 +1140,7 @@ Do not select the similarly named <strong>AMQ</strong> option.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Navigate to the <a href="http://frontend-node-app.apps.pwright.openshiftworkshop.com/">Node.js app</a>.</p>
+<p>Navigate to the <a href="http://frontend-node-app.apps.city.openshiftworkshop.com/">Node.js app</a>.</p>
 </li>
 <li>
 <p>Enter values for <strong>Fruit</strong> and <strong>Stock</strong>, for example, <code>Banana</code> and <code>100</code>.</p>
@@ -1060,7 +1149,7 @@ Do not select the similarly named <strong>AMQ</strong> option.
 <p>Click <strong>Send Request</strong>.</p>
 </li>
 <li>
-<p>Navigate to the <a href="http://spring-boot-rest-http-crud-spring-app.apps.pwright.openshiftworkshop.com/">Spring Boot app</a>.</p>
+<p>Navigate to the <a href="http://spring-boot-rest-http-crud-spring-app.apps.city.openshiftworkshop.com/">Spring Boot app</a>.</p>
 </li>
 <li>
 <p>Check that the entry from the Node.js app is displayed.</p>
@@ -1070,7 +1159,7 @@ Do not select the similarly named <strong>AMQ</strong> option.
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Log in to the <a href="https://eval.apps.pwright.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
+<p>Log in to the <a href="https://eval.apps.city.openshiftworkshop.com/">Red Hat Fuse Online console</a>.</p>
 </li>
 <li>
 <p>Select <strong>Integrations</strong> from the left hand menu.</p>
@@ -1094,7 +1183,7 @@ Do not select the similarly named <strong>AMQ</strong> option.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-30 15:43:26 IST
+Last updated 2018-08-30 15:46:46 IST
 </div>
 </div>
 </body>

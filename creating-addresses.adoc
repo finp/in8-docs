@@ -12,8 +12,8 @@
 // The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
 
 // TODO: figure out enmasse url
-:enmasse-url: https://console-enmasse.apps.pwright.openshiftworkshop.com/console/my-example-space
-// https://console-enmasse-my-example-space.apps.pwright.openshiftworkshop.com/#/dashboard
+:enmasse-url: https://console-enmasse.apps.city.openshiftworkshop.com/console/my-example-space
+// https://console-enmasse-my-example-space.apps.city.openshiftworkshop.com/#/dashboard
 
 // tag::intro[]
 
