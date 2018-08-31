@@ -35,7 +35,7 @@ Provison an EnMasse service by selecting *EnMasse (standard)* from the service c
 
 . Choose *Do not bind at this time*.
 
-[role="Verification"]
+[role="alert alert-info"]
 .Verification
 
 [%interactive]

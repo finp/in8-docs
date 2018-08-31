@@ -56,3 +56,11 @@ NOTE: Do not select the similarly named *AMQ* option.
 . Click *Next* and enter a name for the connection, for example, `enmasse`.
 
 . Click *Create*.
+
+
+[role="alert alert-info"]
+.Verification 
+
+[%interactive]
+
+* [ ] Check the *Connections* screen of the link:{fuse-url}[Red Hat Fuse Online console] to make sure the new connection exists.

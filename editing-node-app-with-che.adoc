@@ -61,4 +61,13 @@ This automatically triggers a new build of the app in OpenShift.
 
 
 
+[role="alert alert-info"]
+.Verification 
+
+[%interactive]
+
+* [ ] Check the *Builds* screen of the *my-node-app* project in the link:{openshift-url}[OpenShift console] for a recent build.
+
+
+
 

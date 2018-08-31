@@ -39,3 +39,11 @@ You create two addresses in EnMasse to route messages to the Spring Boot app.
 .. Select *multicast* as the type and click *Next*.
 .. Select *Standard* as the address plan and click *Next*.
 .. Select *Create* to complete the wizard.
+
+[role="alert alert-info"]
+.Verification 
+
+[%interactive]
+
+* [ ] Check the *Addresses* screen of the link:{enmasse-url}[EnMasse] console to make sure the two addresses exist.
+

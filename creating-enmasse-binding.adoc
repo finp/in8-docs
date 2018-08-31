@@ -22,7 +22,7 @@ To use EnMasse, you must create an OpenShift binding.
 
 . Click *Bind* and wait for the binding to complete.
 
-[role="Verification"]
+[role="alert alert-info"]
 .Verification 
 
 [%interactive]

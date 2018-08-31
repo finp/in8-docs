@@ -84,3 +84,12 @@ To use the Fuse connections, you must create an integration in Red Hat Fuse Onli
 . Click *Done* to navigate back to the Integration screen.
 . Click *Publish*.
 . When prompted, enter a name, for example `steel-thread-0`.
+
+
+[role="alert alert-info"]
+.Verification 
+
+[%interactive]
+
+* [ ] Check the *Integrations* screen of the link:{fuse-url}[Red Hat Fuse Online console] to make sure the new connection exists.
+

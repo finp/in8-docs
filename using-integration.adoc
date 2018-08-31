@@ -24,10 +24,17 @@ After setting up the integration between the Node.js and Spring Boot application
 
 . Check that the entry from the Node.js app is displayed.
 
-. To view the log of activity:
 
-.. Log in to the link:{fuse-url}[Red Hat Fuse Online console].
-.. Select *Integrations* from the left hand menu.
-.. Select your integration.
-.. Select the *Activity* tab.
-.. Expand the log entry to display the steps performed.
+
+[role="alert alert-info"]
+.Verification 
+
+[%interactive]
+
+* [ ] View the activity log:
+
+. Log in to the link:{fuse-url}[Red Hat Fuse Online console].
+. Select *Integrations* from the left hand menu.
+. Select your integration.
+. Select the *Activity* tab.
+. Expand the log entry to display the steps performed.

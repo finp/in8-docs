@@ -31,3 +31,12 @@ To send messages to the Spring Boot app, you must create a connection in Red Hat
 . Click *Next* and enter a name for the connection, for example, `http`.
 
 . Click *Create*.
+
+
+[role="alert alert-info"]
+.Verification 
+
+[%interactive]
+
+* [ ] Check the *Connections* screen of the link:{fuse-url}[Red Hat Fuse Online console] to make sure the new connection exists.
+
