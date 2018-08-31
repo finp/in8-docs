@@ -22,3 +22,10 @@ To use EnMasse, you must create an OpenShift binding.
 
 . Click *Bind* and wait for the binding to complete.
 
+[role="Verification"]
+.Verification 
+
+[%interactive]
+
+* [ ] Check the *Overview* screen of the *eval* project in the link:{openshift-url}[OpenShift console] for a binding related to *EnMasse (standard)*.
+
