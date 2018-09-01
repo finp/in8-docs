@@ -1,7 +1,7 @@
 
 [id='introduction']
 
-= Introduction
+.Introduction
 
 In this tutorial you create two apps using Launcher (a Node.js app and a Spring Boot app).
 Each app exposes a RESTful API that you connect so that they can share data without requiring coding or custom configuration.

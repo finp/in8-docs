@@ -1,28 +1,2 @@
-include::{partialsdir}/attributes.adoc[]
 
-* xref:getting-started.adoc[Getting Started]
-
-* xref:mobile-clients.adoc[Mobile Clients]
-
-* xref:con_services.adoc[Mobile Services]
-
-** xref:identity-management.adoc[{keycloak-service}]
-
-** xref:push-notifications.adoc[{unifiedpush-service}]
-
-
-** xref:runtime-connector.adoc[{custom-service}]
-
-
-** xref:mobile-metrics.adoc[{metrics-service}]
-
-** xref:mobile-cicd.adoc[{mobile-ci-cd-service}]
-
-
-** xref:device-security.adoc[{device-security-service}]
-
-* xref:showcase-apps.adoc[Showcase Apps]
-
-* xref:ref_api.adoc[API Reference]
-* xref:mobile-cli.adoc[Mobile CLI]
-* xref:glossary.adoc[Glossary]
+* xref:steel-thread.adoc[Steel Thread 00]
