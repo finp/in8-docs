@@ -16,7 +16,8 @@ include::{partialsdir}/setting-up-enmasse.adoc[leveloffset=1]
 
 include::{partialsdir}/creating-enmasse-binding.adoc[leveloffset=1]
 
-include::{partialsdir}/creating-addresses.adoc[leveloffset=1]
+include::https://raw.githubusercontent.com/finp/tutorial-web-app/docs-drop/public/steelthreads/asciidocs/en/creating-addresses.adoc[leveloffset=1]
+// include::{partialsdir}/creating-addresses.adoc[leveloffset=1]
 
 include::{partialsdir}/running-node-app.adoc[leveloffset=1]
 
