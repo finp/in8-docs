@@ -18,13 +18,11 @@
 // Book Title
 = {steel-thread}
 
-//include::{url}/introduction.adoc[leveloffset=1]
+include::{url}/introduction.adoc[leveloffset=1]
 
 include::{url}/setting-up-enmasse.adoc[leveloffset=1]
 
 include::{url}/creating-enmasse-binding.adoc[leveloffset=1]
-
-// https://raw.githubusercontent.com/finp/tutorial-web-app/docs-drop/public/steelthreads/asciidocs/en/creating-addresses.adoc
 
 include::{url}/creating-addresses.adoc[leveloffset=1]
 
