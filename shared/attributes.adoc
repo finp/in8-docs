@@ -1,2 +1,0 @@
-:integreatly: Integreatly
-:steel-thread: Integrating two RESTful web services
