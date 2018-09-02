@@ -6,7 +6,7 @@ site:
   start_page: integreatly::steel-thread
 content:
   sources:
-  - url: .
+  - url: ./.
     branches: HEAD
 ui:
   bundle:
