@@ -1,0 +1,7 @@
+= Configuring EnMasse
+
+include::{url}/setting-up-enmasse.adoc[leveloffset=1]
+
+include::{url}/creating-enmasse-binding.adoc[leveloffset=1]
+
+include::{url}/creating-addresses.adoc[leveloffset=1]
