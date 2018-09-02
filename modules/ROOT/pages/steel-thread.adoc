@@ -3,7 +3,7 @@
 // include::{url}/shared/attributes.adoc[]
 
 :numbered:
-:chapter-label: 
+:chapter-label:
 
 :steel-thread: Integrating two RESTful web services
 
@@ -11,14 +11,14 @@
 :org: finp
 :repo: tutorial-web-app
 :branch: docs-drop
-:path: docs-drop/public/steelthreads/asciidocs/en
+:path: public/steelthreads/asciidocs/en
 
 :url: {githost}/{org}/{repo}/{branch}/{path}
 
 // Book Title
 = {steel-thread}
 
-include::{url}/introduction.adoc[leveloffset=1]
+//include::{url}/introduction.adoc[leveloffset=1]
 
 include::{url}/setting-up-enmasse.adoc[leveloffset=1]
 
