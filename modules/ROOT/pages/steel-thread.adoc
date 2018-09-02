@@ -1,34 +1,43 @@
 // The master.adoc file for The Integreatly Guide
 
-// include::{partialsdir}/shared/attributes.adoc[]
+// include::{url}/shared/attributes.adoc[]
 
 :numbered:
 :chapter-label: 
 
 :steel-thread: Integrating two RESTful web services
 
+:githost: https://raw.githubusercontent.com
+:org: finp
+:repo: tutorial-web-app
+:branch: docs-drop
+:path: docs-drop/public/steelthreads/asciidocs/en
+
+:url: {githost}/{org}/{repo}/{branch}/{path}
+
 // Book Title
 = {steel-thread}
 
-include::{partialsdir}/introduction.adoc[leveloffset=1]
+include::{url}/introduction.adoc[leveloffset=1]
 
-include::{partialsdir}/setting-up-enmasse.adoc[leveloffset=1]
+include::{url}/setting-up-enmasse.adoc[leveloffset=1]
 
-include::{partialsdir}/creating-enmasse-binding.adoc[leveloffset=1]
+include::{url}/creating-enmasse-binding.adoc[leveloffset=1]
 
-include::https://raw.githubusercontent.com/finp/tutorial-web-app/docs-drop/public/steelthreads/asciidocs/en/creating-addresses.adoc[leveloffset=1]
-// include::{partialsdir}/creating-addresses.adoc[leveloffset=1]
+// https://raw.githubusercontent.com/finp/tutorial-web-app/docs-drop/public/steelthreads/asciidocs/en/creating-addresses.adoc
 
-include::{partialsdir}/running-node-app.adoc[leveloffset=1]
+include::{url}/creating-addresses.adoc[leveloffset=1]
 
-include::{partialsdir}/editing-node-app-with-che.adoc[leveloffset=1]
+include::{url}/running-node-app.adoc[leveloffset=1]
 
-include::{partialsdir}/running-spring-app.adoc[leveloffset=1]
+include::{url}/editing-node-app-with-che.adoc[leveloffset=1]
 
-include::{partialsdir}/creating-amqp-connection-in-fuse.adoc[leveloffset=1]
+include::{url}/running-spring-app.adoc[leveloffset=1]
 
-include::{partialsdir}/creating-http-connection-in-fuse.adoc[leveloffset=1]
+include::{url}/creating-amqp-connection-in-fuse.adoc[leveloffset=1]
 
-include::{partialsdir}/creating-fuse-integration.adoc[leveloffset=1]
+include::{url}/creating-http-connection-in-fuse.adoc[leveloffset=1]
 
-include::{partialsdir}/using-integration.adoc[leveloffset=1]
+include::{url}/creating-fuse-integration.adoc[leveloffset=1]
+
+include::{url}/using-integration.adoc[leveloffset=1]
