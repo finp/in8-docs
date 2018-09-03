@@ -2,6 +2,8 @@
 //
 // <List assemblies here, each on a new line>
 
+:launcher-name: Red Hat Developer Launcher
+
 
 [id='running-spring-app_{context}']
 // tag::intro[]
@@ -12,7 +14,8 @@ In this procedure, you deploy an example Spring Boot CRUD application that is pr
 
 :launcher-url: http://launcher-launcher.apps.city.openshiftworkshop.com/
 
-. Log in to the link:{launcher-url}[Red Hat Developer Launcher].
+
+. Log in to the link:{launcher-url}[{launcher-name}, window="_blank"] console.
 
 . Select the *LAUNCH YOUR PROJECT*.
 
@@ -33,6 +36,6 @@ NOTE: Creating this application automatically creates an OpenShift project of th
 
 [%interactive]
 
-* [ ] Check the *Overview* screen of the *my-spring-app* project in the link:{openshift-url}[OpenShift console] for an application URL.
+* [ ] Check the *Overview* screen of the *my-spring-app* project in the link:{openshift-url}[OpenShift, window="_blank"] console for an application URL.
 
 

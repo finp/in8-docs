@@ -14,7 +14,7 @@ To send messages to the Spring Boot app, you must create a connection in Red Hat
 :fuse-url: https://eval.apps.city.openshiftworkshop.com/
 :spring-boot-url: http://spring-boot-rest-http-crud-spring-app.apps.city.openshiftworkshop.com/
 
-. Log in to the link:{fuse-url}[Red Hat Fuse Online console].
+. Log in to the link:{fuse-url}[Red Hat Fuse Online, window="_blank"] console.
 
 . Select *Connections* from the left hand menu.
 
@@ -38,5 +38,5 @@ To send messages to the Spring Boot app, you must create a connection in Red Hat
 
 [%interactive]
 
-* [ ] Check the *Connections* screen of the link:{fuse-url}[Red Hat Fuse Online console] to make sure the new connection exists.
+* [ ] Check the *Connections* screen of the link:{fuse-url}[Red Hat Fuse Online, window="_blank"] console to make sure the new connection exists.
 

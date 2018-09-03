@@ -14,7 +14,7 @@ To use EnMasse, you must create an OpenShift binding.
 
 :openshift-url: https://master.city.openshiftworkshop.com/console/project/eval/overview
 
-. Log in to the link:{openshift-url}[OpenShift console].
+. Log in to the link:{openshift-url}[OpenShift, window="_blank"] console.
 
 . Click the *Create Binding* option beside *EnMasse (standard)*.
 
@@ -27,5 +27,5 @@ To use EnMasse, you must create an OpenShift binding.
 
 [%interactive]
 
-* [ ] Check the *Overview* screen of the *eval* project in the link:{openshift-url}[OpenShift console] for a binding related to *EnMasse (standard)*.
+* [ ] Check the *Overview* screen of the *eval* project in the link:{openshift-url}[OpenShift, window="_blank"] console for a binding related to *EnMasse (standard)*.
 

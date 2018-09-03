@@ -18,7 +18,7 @@ asciidoc:
   - ./lib/remote-include-processor
   attributes:
     context: 'antora'
-    location: remote
+    location: 'remote'
     experimental: ''
     idprefix: ''
     idseparator: '-'

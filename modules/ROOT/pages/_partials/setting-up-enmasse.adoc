@@ -27,7 +27,7 @@ Provison an EnMasse service by selecting *EnMasse (standard)* from the service c
 
 :openshift-url: https://master.city.openshiftworkshop.com/console/project/eval/overview
 
-. Log in to the link:{openshift-url}[OpenShift console] and navigate to the service catalog.
+. Log in to the link:{openshift-url}[OpenShift, window="_blank"] console and navigate to the service catalog.
 
 . Select *EnMasse (standard)* to starte the provisioning wizard.
 
@@ -42,5 +42,5 @@ Provison an EnMasse service by selecting *EnMasse (standard)* from the service c
 
 [%interactive]
 
-* [ ] Check the *Overview* screen of the *eval* project in the link:{openshift-url}[OpenShift console] for a *Provisioned Service* named *EnMasse (standard)*.
+* [ ] Check the *Overview* screen of the *eval* project in the link:{openshift-url}[OpenShift, window="_blank"] console for a *Provisioned Service* named *EnMasse (standard)*.
 

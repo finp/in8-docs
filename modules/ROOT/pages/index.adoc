@@ -15,15 +15,16 @@
 
 :url: {githost}/{org}/{repo}/{branch}/{path}
 
-ifeval::[{location} == local]
-:adoc-location: {url}
-endif::[]
-
 
 
 ifeval::[{location} == local]
 :adoc-location: {partialsdir}
 endif::[]
+
+ifeval::[{location} == remote]
+:adoc-location: {url}
+endif::[]
+
 
 // Book Title
 = {steel-thread}

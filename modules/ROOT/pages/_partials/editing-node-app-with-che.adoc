@@ -13,7 +13,7 @@ Che allows you edit the source code for your Node.js app in the browser.
 
 :che-url: http://che-che.apps.city.openshiftworkshop.com/
 
-. Log in to link:{launcher-url}[Che].
+. Log in to the link:{launcher-url}[Che, window="_blank"] console.
 
 . Click *Create Workspace*.
 
@@ -66,7 +66,7 @@ This automatically triggers a new build of the app in OpenShift.
 
 [%interactive]
 
-* [ ] Check the *Builds* screen of the *my-node-app* project in the link:{openshift-url}[OpenShift console] for a recent build.
+* [ ] Check the *Builds* screen of the *my-node-app* project in the link:{openshift-url}[OpenShift, window="_blank"] console for a recent build.
 
 
 
