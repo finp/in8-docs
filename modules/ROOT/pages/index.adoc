@@ -17,11 +17,12 @@
 
 
 
-ifeval::[{location} == local]
+ifeval::["{location}" == "local"]
 :adoc-location: {partialsdir}
 endif::[]
 
-ifeval::[{location} == remote]
+
+ifeval::["{location}" == "remote"]
 :adoc-location: {url}
 endif::[]
 
