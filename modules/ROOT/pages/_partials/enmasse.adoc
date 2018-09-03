@@ -1,4 +1,4 @@
-= Configuring EnMasse
+= Setting up a message queue
 
 include::{url}/setting-up-enmasse.adoc[leveloffset=2]
 
