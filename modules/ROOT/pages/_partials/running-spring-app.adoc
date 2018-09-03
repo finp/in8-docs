@@ -5,7 +5,7 @@
 
 [id='running-spring-app_{context}']
 // tag::intro[]
-= Running a Spring Boot CRUD app
+= Creating a REST API endpoint to receive messages
 
 In this procedure, you deploy an example Spring Boot CRUD application that is pre-configured to act as a simple grocery inventory application.
 // end::intro[]

@@ -1,5 +1,7 @@
 = Setting up a message queue
 
+To create and configure a message queue, you use EnMasse,  an open source project for managed, self-service messaging on OpenShift.
+
 include::{url}/setting-up-enmasse.adoc[leveloffset=2]
 
 include::{url}/creating-enmasse-binding.adoc[leveloffset=2]
