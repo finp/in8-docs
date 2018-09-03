@@ -1,0 +1,5 @@
+= Creating and editing a publishing endpoint
+
+include::{url}/running-node-app.adoc[leveloffset=2]
+
+include::{url}/editing-node-app-with-che.adoc[leveloffset=2]

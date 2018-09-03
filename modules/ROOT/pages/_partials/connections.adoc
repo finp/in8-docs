@@ -1,0 +1,5 @@
+= Creating connections
+
+include::{url}/creating-amqp-connection-in-fuse.adoc[leveloffset=2]
+
+include::{url}/creating-http-connection-in-fuse.adoc[leveloffset=2]
