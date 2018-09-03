@@ -10,7 +10,7 @@
 :githost: https://raw.githubusercontent.com
 :org: finp
 :repo: tutorial-web-app
-:branch: docs-drop
+:branch: docs-update
 :path: public/steelthreads/asciidocs/en
 
 :url: {githost}/{org}/{repo}/{branch}/{path}
