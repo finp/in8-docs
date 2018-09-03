@@ -16,7 +16,7 @@
 // or https://console-enmasse-my-example-space.apps.city.openshiftworkshop.com/#/dashboard
 
 // tag::intro[]
-= Creating an EnMasse space
+= Creating an EnMasse address space
 
 EnMasse simplifies running messaging infrastructure for your organization.
 You use it to provide messaging services from a Node.js app to a Spring Boot app.
@@ -27,7 +27,9 @@ Provison an EnMasse service by selecting *EnMasse (standard)* from the service c
 
 :openshift-url: https://master.city.openshiftworkshop.com/console/project/eval/overview
 
-. Log in to the link:{openshift-url}[OpenShift console].
+. Log in to the link:{openshift-url}[OpenShift console] and navigate to the service catalog.
+
+. Select *EnMasse (standard)* to starte the provisioning wizard.
 
 . Select the *unlimited-standard* option in the Plan step of the wizard.
 
