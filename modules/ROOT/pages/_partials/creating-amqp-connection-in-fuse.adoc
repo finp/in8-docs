@@ -14,7 +14,7 @@ To receive messages from EnMasse, you must create a connection in Red Hat Fuse O
 :fuse-url: https://eval.apps.city.openshiftworkshop.com/
 :openshift-url: https://master.city.openshiftworkshop.com/console/project/eval/overview
 
-. Log in to the link:{fuse-url}[Red Hat Fuse Online console].
+. Log in to the link:{fuse-url}[Red Hat Fuse Online, window="_blank"] console.
 
 . Select *Connections* from the left hand menu.
 
@@ -26,7 +26,7 @@ NOTE: Do not select the similarly named *AMQ* option.
 
 . Retrieve configuration values relating to EnMasse:
 
-..  Log in to the link:{openshift-url}[OpenShift console] and navigate to the Overview screen for the *evals* project.
+..  Log in to the link:{openshift-url}[OpenShift, window="_blank"] console and navigate to the Overview screen for the *evals* project.
 
 .. Expand the *EnMasse (standard)* service by selecting the *>* button.
 
@@ -63,4 +63,4 @@ NOTE: Do not select the similarly named *AMQ* option.
 
 [%interactive]
 
-* [ ] Check the *Connections* screen of the link:{fuse-url}[Red Hat Fuse Online console] to make sure the new connection exists.
+* [ ] Check the *Connections* screen of the link:{fuse-url}[Red Hat Fuse Online, window="_blank"] console to make sure the new connection exists.

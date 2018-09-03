@@ -3,7 +3,7 @@ runtime:
 site:
   title: Walkthroughs
   url: https://www.redhat.com
-  start_page: integreatly::steel-thread
+  start_page: integreatly::index
 content:
   sources:
   - url: .
@@ -14,10 +14,9 @@ ui:
     snapshot: true
 
 asciidoc:
-  extensions:
-  - ./lib/remote-include-processor
   attributes:
     context: 'antora'
+    location: 'local'
     experimental: ''
     idprefix: ''
     idseparator: '-'

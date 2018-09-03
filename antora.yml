@@ -1,7 +1,7 @@
 name: integreatly
 title: Walkthroughs
 version: 'latest'
-start_ROOT: ROOT:steel-thread.adoc
+start_ROOT: ROOT:index.adoc
 nav:
 - modules/ROOT/nav.adoc
 
