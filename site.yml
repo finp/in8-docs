@@ -7,7 +7,7 @@ site:
 content:
   sources:
   - url: https://github.com/finp/in8-docs.git
-    branches: unify-enmasse
+    branches: master
 ui:
   bundle:
     url: https://github.com/finp/rh-ui/raw/master/build/ui-bundle.zip
