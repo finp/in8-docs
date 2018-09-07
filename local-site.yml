@@ -6,8 +6,9 @@ site:
   start_page: integreatly::index
 content:
   sources:
-  - url: .
+  - url: ../tutorial-web-app
     branches: HEAD
+    start_path: docs
 ui:
   bundle:
     url: https://github.com/finp/rh-ui/raw/master/build/ui-bundle.zip
