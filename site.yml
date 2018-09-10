@@ -6,8 +6,8 @@ site:
   start_page: integreatly::index
 content:
   sources:
-  - url: https://github.com/finp/tutorial-web-app.git
-    branches: docs-separate
+  - url: https://github.com/integr8ly/tutorial-web-app.git
+    branches: development
     start_path: docs
 ui:
   bundle:
