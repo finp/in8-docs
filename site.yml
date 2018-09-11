@@ -1,7 +1,7 @@
 runtime:
   cache_dir: ./.cache/antora
 site:
-  title: Walkthroughs
+  title: walkthroughs
   url: https://www.redhat.com
   start_page: integreatly::index
 content:
