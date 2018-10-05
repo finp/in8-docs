@@ -6,7 +6,7 @@ site:
   start_page: integreatly::index
 content:
   sources:
-  - url: ../tutorial-web-app
+  - url: /antora/tutorial-web-app
     branches: HEAD
     start_path: docs
 ui:
